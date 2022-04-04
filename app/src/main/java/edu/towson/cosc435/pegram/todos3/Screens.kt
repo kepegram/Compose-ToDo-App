@@ -1,9 +1,7 @@
 package edu.towson.cosc435.pegram.todos3
 
-import android.widget.Toast
+import android.widget.Space
 import androidx.compose.foundation.BorderStroke
-import androidx.compose.foundation.background
-import androidx.compose.foundation.combinedClickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -17,7 +15,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.scale
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.SolidColor
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -103,26 +100,28 @@ fun TodoCards() {
                 shape = RoundedCornerShape(5.dp),
                 elevation = 16.dp,
                 modifier = Modifier
-                    .padding(start=16.dp, end=16.dp, top=5.dp, bottom=5.dp)
+                    .padding(start = 16.dp, end = 16.dp, top = 5.dp, bottom = 5.dp)
                     .fillMaxWidth()
             ) {
                 Column(
                 ) {
-                    Text(text = "Todo0", fontSize = 30.sp)
-                    Text(text = "Contents0", fontSize = 20.sp)
-                    Text(text = "Sun Mar 06 18:36:43 EST 2022", fontSize = 10.sp)
+                    Text(text = "Todo $index", fontSize = 30.sp, modifier = Modifier.padding(4.dp))
+                    Text(text = "Contents $index", fontSize = 20.sp, modifier = Modifier.padding(4.dp))
+                    Text(text = "Sun Mar 6 18:36:43 EST 2022", fontSize = 10.sp, modifier = Modifier.padding(4.dp))
                 }
                 Column(
-                    horizontalAlignment = Alignment.End,
-                    verticalArrangement = Arrangement.Center
+                    horizontalAlignment = Alignment.End
                 ) {
+                    Spacer(modifier = Modifier.padding(bottom = 45.dp))
                     Row(){
                         val checkedState = remember { mutableStateOf(false)}
                         Checkbox(
                             checked = checkedState.value,
                             onCheckedChange = { checkedState.value = it },
                             colors = CheckboxDefaults.colors(MaterialTheme.colors.primaryVariant),
-                            modifier = Modifier.scale(1f)
+                            modifier = Modifier
+                                .scale(1f)
+                                .padding(end = 50.dp)
                         )
                     }
                 }
@@ -130,7 +129,6 @@ fun TodoCards() {
         }
     }
 }
-
 
 @Composable
 fun LabelledCheckbox() {

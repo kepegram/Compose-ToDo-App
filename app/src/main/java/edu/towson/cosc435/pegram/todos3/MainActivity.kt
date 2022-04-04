@@ -16,8 +16,6 @@ import edu.towson.cosc435.pegram.todos3.ui.theme.Todos3Theme
 import kotlinx.coroutines.launch
 
 class MainActivity : ComponentActivity() {
-    @ExperimentalComposeUiApi
-    @ExperimentalFoundationApi
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {

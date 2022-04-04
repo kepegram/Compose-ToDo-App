@@ -25,22 +25,7 @@ import androidx.navigation.NavController
 
 @Composable
 fun Home(navController: NavController,
-         openDrawer: () -> Unit) {
-    Column(
-        modifier = Modifier
-            .fillMaxSize()
-            .padding(20.dp),
-        verticalArrangement = Arrangement.Bottom,
-        horizontalAlignment = Alignment.End
-    ) {
-        FloatingActionButton(
-            onClick = { navController.navigate(route = DrawerScreens.Add.route) },
-            backgroundColor = MaterialTheme.colors.primaryVariant,
-            contentColor = Color.White
-        ) {
-            Icon(Icons.Filled.Add , contentDescription = null)
-        }
-    }
+    openDrawer: () -> Unit) {
     Column(
         modifier = Modifier.fillMaxSize()) {
         TopBar(
@@ -54,6 +39,21 @@ fun Home(navController: NavController,
             horizontalAlignment = Alignment.CenterHorizontally)
         {
             TodoCards()
+        }
+    }
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(20.dp),
+        verticalArrangement = Arrangement.Bottom,
+        horizontalAlignment = Alignment.End
+    ) {
+        FloatingActionButton(
+            onClick = { navController.navigate(route = DrawerScreens.Add.route) },
+            backgroundColor = MaterialTheme.colors.primaryVariant,
+            contentColor = Color.White
+        ) {
+            Icon(Icons.Filled.Add , contentDescription = null)
         }
     }
 }
@@ -97,7 +97,6 @@ fun Add(openDrawer: () -> Unit) {
 @Composable
 fun TodoCards() {
     LazyColumn(
-        //verticalArrangement = Arrangement.Top
     ) {
         items(10) {index ->
             Card(

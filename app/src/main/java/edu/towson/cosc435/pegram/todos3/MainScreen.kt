@@ -3,6 +3,7 @@ package edu.towson.cosc435.pegram.todos3
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rememberCoroutineScope
+import androidx.navigation.NavController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
@@ -42,16 +43,13 @@ fun AppMainScreen() {
             ) {
                 composable(DrawerScreens.Home.route) {
                     Home(
-                        openDrawer = {
-                            openDrawer()
-                        }
+                        navController = navController,
+                        openDrawer = { openDrawer() }
                     )
                 }
                 composable(DrawerScreens.Add.route) {
                     Add(
-                        openDrawer = {
-                            openDrawer()
-                        }
+                        openDrawer = { openDrawer() }
                     )
                 }
             }

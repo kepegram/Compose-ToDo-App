@@ -27,13 +27,3 @@ class MainActivity : ComponentActivity() {
         }
     }
 }
-
-@ExperimentalComposeUiApi
-@ExperimentalFoundationApi
-@Preview(showBackground = true)
-@Composable
-fun DefaultPreview() {
-    Todos3Theme {
-        AppMainScreen()
-    }
-}

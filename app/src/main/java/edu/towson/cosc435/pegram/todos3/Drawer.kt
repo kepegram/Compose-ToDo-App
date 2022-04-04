@@ -12,7 +12,7 @@ import edu.towson.cosc435.pegram.todos3.ui.theme.Todos3Theme
 
 sealed class DrawerScreens(val title: String, val route: String) {
     object Home : DrawerScreens("Todos", "home")
-    object Add : DrawerScreens("Add new Todo", "add")
+    object Add : DrawerScreens("+ Add new Todo", "add")
 }
 
 private val screens = listOf(

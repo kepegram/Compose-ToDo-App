@@ -1,2 +1,2 @@
-# Compose-ToDo-App
+# ToDo App
 WIP ToDo app created using Kotlin & Jetpack Compose.
